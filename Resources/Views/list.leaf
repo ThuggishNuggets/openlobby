@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GTFO - OpenLobby</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="container">
+        <h2> Publish Lobby </h1>
+        <h4><i>Your lobby will stay alive for 15 minutes after it was last created/updated.</i></h2>
+        <div class="row">
+            <form method="POST" action="/gtfo">
+                <div class="col-xs-12 col-sm-3">
+                    <div class="form-group">
+                        <label for="publicID">Lobby ID</label>
+                        <input type="text" name="publicID" id="publicID" class="form-control">
+                    </div>
+                    <input class="btn btn-success" type="submit" value="Publish" />
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <div class="form-group">
+                        <label for="playercount">Player Count</label>
+                        <select class="form-control" name="playercount" id="playercount">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br><br><br>
+        <h1> Active Lobbies </h1>
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3"><strong>Lobby ID</strong></div>
+            <div class="col-xs-12 col-sm-3"><strong>Player Count</strong></div>
+        </div>
+        <hr>
+        #for(lobby in lobbylist) {
+            <div class="row">
+                <div class="col-xs-12 col-sm-3">#(lobby.publicID)</div>
+                <div class="col-xs-12 col-sm-3">#(lobby.playercount)/4</div>
+            </div>
+        }
+    </body>
+</html>

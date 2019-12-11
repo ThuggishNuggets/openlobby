@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GTFO - OpenLobby</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body class="container">
+        <h2 class="text-center"> Lobby ID: #(lobby.publicID) </h2>
+        <h4 class="text-center"><i>Your lobby will stay alive for 15 minutes after it is last updated.</i></h4>
+        <h5 class="text-center">NOTE: Setting the Player Count to 4 is the same as deleting the Lobby.</h5>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3"></div>
+            <div class="col-xs-12 col-sm-3">
+                <form method="POST" action="/gtfo/#(lobby.id)">
+                    <div class="form-group">
+                        <label for="playercount">Player Count</label>
+                        <select class="form-control" name="playercount" id="playercount">
+                            <option #if(lobby.playercount == 1) { 
+                                selected="selected\" 
+                            }>1</option>
+                            <option #if(lobby.playercount == 2) { 
+                                selected="selected\" 
+                            }>2</option>
+                            <option #if(lobby.playercount == 3) { 
+                                selected="selected\" }
+                            >3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Update" />
+                </form>
+                <form method="POST" action="/gtfo/#(lobby.id)/delete">
+                    <div class="form-group input-group">
+                        <span class="input-group-btn">
+                            <input class="btn btn-danger" type="submit" value="Delete Lobby" />
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-3"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-3"></div>
+            <div class="col-xs-12 col-sm-3">
+
+            </div>
+            <div class="col-xs-12 col-sm-3"></div>
+        </div>
+    </body>
+</html>
