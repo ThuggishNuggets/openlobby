@@ -57,7 +57,7 @@
                 <div class="col-xs-12 col-sm-3">#(lobby.playercount)/4</div>
                 <div class="col-xs-12 col-sm-3">
                 #if(!lobby.discordLink.count > 0) {
-                    <a href="#(lobby.discordLink)">Discord</a></div>
+                    <a href="#(lobby.discordLink)">Join</a></div>
                 }
                 #if(lobby.discordLink.count < 0) {
                     &nbsp;
