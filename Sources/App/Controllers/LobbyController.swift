@@ -37,7 +37,9 @@ final class LobbyController {
                     }
                 }
                 
+                lobby.level = lobbyForm.level
                 lobby.playercount = lobbyForm.playercount
+                lobby.discordLink = lobbyForm.discordLink
 
                 return lobby.save(on: req).map { _ in
                     return req.redirect(to: "/gtfo/\(lobby.id!)")
@@ -57,5 +59,7 @@ final class LobbyController {
 }
 
 struct LobbyForm: Content {
+    var level: String
+    var discordLink: String
     var playercount: Int
 }
